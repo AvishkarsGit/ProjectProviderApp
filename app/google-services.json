@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "75882217069",
+    "firebase_url": "https://projectproviderbookapp-default-rtdb.firebaseio.com",
+    "project_id": "projectproviderbookapp",
+    "storage_bucket": "projectproviderbookapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75882217069:android:08c9d5cbc5a67a82b68964",
+        "android_client_info": {
+          "package_name": "com.example.projectapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75882217069-5ulgvmuckn02bpstsh9laolqo1u5chub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP_nTasEvnmyFX-UjlwHr9J7bxWV6LuAA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75882217069-5ulgvmuckn02bpstsh9laolqo1u5chub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
