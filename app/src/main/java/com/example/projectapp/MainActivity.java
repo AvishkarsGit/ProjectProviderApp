@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         binding.skipBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,DashBoardUserActivity.class));
+                Intent i = new Intent(MainActivity.this,DashBoardUserActivity.class);
+                startActivity(i);
             }
         });
     }

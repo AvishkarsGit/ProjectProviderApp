@@ -3,6 +3,7 @@ package com.example.projectapp.adapters;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projectapp.PdfListAdminActivity;
 import com.example.projectapp.models.ModelCategory;
 import com.example.projectapp.databinding.RowCategoryBinding;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -80,14 +82,23 @@ public class AdapterCategory  extends RecyclerView.Adapter<AdapterCategory.Holde
                         .show();
             }
         });
-
+        //handle item click, got pdf list admin activity
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, PdfListAdminActivity.class);
+                i.putExtra("categoryId",id);
+                i.putExtra("categoryTitle",category);
+                context.startActivity(i);
+            }
+        });
     }
 
     private void deleteCategory(ModelCategory model, HolderCategory holder) {
         //get id of category to delete
         String id = model.getId();
         //Firebase DB > Categories > categoryId
-        DatabaseReference ref  = FirebaseDatabase.getInstance().getReference("/Categories");
+        DatabaseReference ref  = FirebaseDatabase.getInstance().getReference("Categories");
         ref.child(id)
                 .removeValue()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.projectapp.databinding.ActivityCategoryAddBinding;
@@ -29,11 +30,14 @@ public class CategoryAddActivity extends AppCompatActivity {
     //progress Dialog
     private ProgressDialog progressDialog;
 
+    EditText e1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityCategoryAddBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        e1 = findViewById(R.id.edt_category);
 
         //init firebase auth
         firebaseAuth  = FirebaseAuth.getInstance();
@@ -98,6 +102,7 @@ public class CategoryAddActivity extends AppCompatActivity {
                         //category add success
                         progressDialog.dismiss();
                         Toast.makeText(CategoryAddActivity.this, "Subject added..", Toast.LENGTH_SHORT).show();
+                        e1.setText("");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
