@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import com.example.projectapp.databinding.ActivityPdfDetailBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +27,7 @@ public class PdfDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityPdfDetailBinding.inflate(getLayoutInflater());
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(binding.getRoot());
 
         //get data from intent e.g. bookId
@@ -42,6 +44,12 @@ public class PdfDetailActivity extends AppCompatActivity {
             onBackPressed();
         });
 
+        binding.readBookBtn.setOnClickListener((view)->{
+            Intent intent1 = new Intent(PdfDetailActivity.this,PdfViewActivity.class);
+            intent1.putExtra("bookId", bookId);
+            startActivity(intent1);
+
+        });
     }
 
     private void loadBookDetails() {

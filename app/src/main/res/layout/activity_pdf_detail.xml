@@ -39,6 +39,7 @@
 <!--    All content under scroll view-->
 
     <ScrollView
+        android:layout_above="@id/readBookBtn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbarRl"
@@ -211,4 +212,13 @@
         
     </ScrollView>
 
+    <!-- Button: Open to view pdf-->
+    <Button
+        android:id="@+id/readBookBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:drawableTop="@drawable/baseline_library_books_24"
+        android:text="READ"
+        android:background="@color/design_default_color_primary"/>
 </RelativeLayout>
