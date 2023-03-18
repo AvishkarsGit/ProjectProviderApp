@@ -155,7 +155,7 @@
                 android:text="Register"
                 android:textColor="@color/purple_500"
                 android:fontFamily="sans-serif-condensed"
-                android:background="@drawable/shape_button01"/>
+                android:background="@drawable/shape_button02"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
