@@ -110,6 +110,10 @@
             android:textSize="16sp"
             android:textColor="@color/black"
             android:textColorHint="#757272"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gsw"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,7 +137,8 @@
         android:textColorHint="#757272"
         android:textSize="16sp"/>
 
-<!--    Button upload pdf-->
+
+    <!--    Button upload pdf-->
         <Button
             android:id="@+id/submitBtn"
             android:layout_width="match_parent"
@@ -145,5 +150,6 @@
             android:text="Upload"
             android:background="@drawable/shape_button02"
             android:textColor="@color/purple_500"/>
+
 
 </RelativeLayout>
