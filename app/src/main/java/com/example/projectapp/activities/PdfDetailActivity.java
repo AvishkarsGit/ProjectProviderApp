@@ -1,4 +1,4 @@
-package com.example.projectapp;
+package com.example.projectapp.activities;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.projectapp.MyApplication;
 import com.example.projectapp.databinding.ActivityPdfDetailBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,7 +60,7 @@ public class PdfDetailActivity extends AppCompatActivity implements PaymentResul
         });
 
         binding.readBookBtn.setOnClickListener((view)->{
-            Intent intent1 = new Intent(PdfDetailActivity.this,PdfViewActivity.class);
+            Intent intent1 = new Intent(PdfDetailActivity.this, PdfViewActivity.class);
             intent1.putExtra("bookId", bookId);
             startActivity(intent1);
 

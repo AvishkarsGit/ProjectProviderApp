@@ -1,6 +1,5 @@
-package com.example.projectapp;
+package com.example.projectapp.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -144,7 +143,7 @@ public class RegisterActivity extends AppCompatActivity {
                         //data add  to db
                         progressDialog.dismiss();
                         Toast.makeText(RegisterActivity.this, "Account created..", Toast.LENGTH_SHORT).show();
-                        startActivity( new Intent(RegisterActivity.this,DashBoardUserActivity.class));
+                        startActivity( new Intent(RegisterActivity.this, DashBoardUserActivity.class));
                         finish();
                     }
                 })

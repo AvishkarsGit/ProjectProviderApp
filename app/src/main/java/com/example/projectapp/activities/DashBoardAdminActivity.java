@@ -1,4 +1,4 @@
-package com.example.projectapp;
+package com.example.projectapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,7 +58,7 @@ public class  DashBoardAdminActivity extends AppCompatActivity {
         binding.addCategoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashBoardAdminActivity.this,CategoryAddActivity.class)) ;
+                startActivity(new Intent(DashBoardAdminActivity.this, CategoryAddActivity.class)) ;
             }
         });
 
@@ -66,7 +66,7 @@ public class  DashBoardAdminActivity extends AppCompatActivity {
         binding.addPdfFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashBoardAdminActivity.this,PdfAddActivity.class));
+                startActivity(new Intent(DashBoardAdminActivity.this, PdfAddActivity.class));
             }
         });
     }
@@ -109,7 +109,7 @@ public class  DashBoardAdminActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         if (firebaseUser == null) {
             //if not logged in , go to the main screen
-            startActivity(new Intent(this,MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
         else {

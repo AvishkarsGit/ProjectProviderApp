@@ -1,4 +1,4 @@
-package com.example.projectapp;
+package com.example.projectapp.Filter;
 
 import android.widget.Filter;
 

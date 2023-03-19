@@ -1,4 +1,4 @@
-package com.example.projectapp;
+package com.example.projectapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.projectapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -43,7 +44,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         if (firebaseUser == null) {
             //user is not logged in
             //start main screen
-            startActivity(new Intent(SplashScreenActivity.this,MainActivity.class));
+            startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
             finish();
         }
         else {
@@ -56,12 +57,12 @@ public class SplashScreenActivity extends AppCompatActivity {
                             //get user type
                             String userType = ""+snapshot.child("userType").getValue();
                             if (userType.equals("user")){
-                                startActivity(new Intent(SplashScreenActivity.this,DashBoardUserActivity.class));
+                                startActivity(new Intent(SplashScreenActivity.this, DashBoardUserActivity.class));
                                 finish();
 
                             }
                             else if (userType.equals("admin")) {
-                                startActivity(new Intent(SplashScreenActivity.this,DashBoardAdminActivity.class));
+                                startActivity(new Intent(SplashScreenActivity.this, DashBoardAdminActivity.class));
                                 finish();
 
                             }

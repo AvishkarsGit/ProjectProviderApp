@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.projectapp.PdfListAdminActivity;
+import com.example.projectapp.activities.PdfListAdminActivity;
 import com.example.projectapp.models.ModelCategory;
 import com.example.projectapp.databinding.RowCategoryBinding;
 import com.google.android.gms.tasks.OnFailureListener;

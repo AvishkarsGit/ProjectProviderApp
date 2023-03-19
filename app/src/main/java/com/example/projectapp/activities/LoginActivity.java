@@ -1,4 +1,4 @@
-package com.example.projectapp;
+package com.example.projectapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.noAccountIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
 
@@ -120,12 +120,12 @@ public class LoginActivity extends AppCompatActivity {
                         //get user type
                         String userType = ""+snapshot.child("userType").getValue();
                         if (userType.equals("user")){
-                            startActivity(new Intent(LoginActivity.this,DashBoardUserActivity.class));
+                            startActivity(new Intent(LoginActivity.this, DashBoardUserActivity.class));
                             finish();
 
                         }
                         else if (userType.equals("admin")) {
-                            startActivity(new Intent(LoginActivity.this,DashBoardAdminActivity.class));
+                            startActivity(new Intent(LoginActivity.this, DashBoardAdminActivity.class));
                             finish();
 
                         }
