@@ -68,33 +68,6 @@ public class DashBoardUserActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 categoryArrayList.clear();
-
-                ModelCategory modelAll = new ModelCategory("01","All","",1);
-                ModelCategory modelMostViewed = new ModelCategory("02","Most Viewed","",1);
-                ModelCategory modelMostDownloaded = new ModelCategory("03","Most Downloaded","",1);
-                //add model to list
-                categoryArrayList.add(modelAll);
-                categoryArrayList.add(modelMostViewed);
-                categoryArrayList.add(modelMostDownloaded);
-
-                viewPagerAdapter.addFragment(BookUserFragment.newInstance(
-                        ""+modelAll.getId(),
-                        ""+modelAll.getCategory(),
-                        ""+modelAll.getUid()
-                ), modelAll.getCategory());
-                viewPagerAdapter.addFragment(BookUserFragment.newInstance(
-                        ""+modelMostViewed.getId(),
-                        ""+modelMostViewed.getCategory(),
-                        ""+modelMostViewed.getUid()
-                ), modelMostViewed.getCategory());
-                viewPagerAdapter.addFragment(BookUserFragment.newInstance(
-                        ""+modelMostDownloaded.getId(),
-                        ""+modelMostDownloaded.getCategory(),
-                        ""+modelMostDownloaded.getUid()
-                ), modelMostDownloaded.getCategory());
-                viewPagerAdapter.notifyDataSetChanged();
-
-                //Now Load from firebase
                 for (DataSnapshot ds:snapshot.getChildren()){
                     ModelCategory model = ds.getValue(ModelCategory.class);
                     categoryArrayList.add(model);
@@ -156,9 +129,8 @@ public class DashBoardUserActivity extends AppCompatActivity {
         //getCurrentUser
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         if (firebaseUser == null) {
-            //if not logged in , go to the main screen
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
+            //if not logged in
+            binding.subtitleIv.setText("Not Login");
         }
         else {
             //logged in, get user info
